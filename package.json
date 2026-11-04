@@ -1,0 +1,16 @@
+{
+  "name": "whatsapp-bot-racikan",
+  "version": "1.0.0",
+  "description": "WhatsApp menu bot starter using Baileys",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@whiskeysockets/baileys": "latest",
+    "dotenv": "^16.4.7",
+    "pino": "^9.6.0"
+  }
+}
