@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const pino = require('pino');
+const qrcode = require('qrcode-terminal');
 const {
   default: makeWASocket,
   useMultiFileAuthState,
@@ -45,7 +46,8 @@ async function startBot() {
 
   sock.ev.on('connection.update', ({ connection, lastDisconnect, qr }) => {
     if (qr) {
-      console.log('\n[QR] Pindai QR di atas: WhatsApp > Perangkat tertaut > Tautkan perangkat.');
+  console.log('[QR] Scan kode berikut:');
+  qrcode.generate(qr, { small: true });
     }
     if (connection === 'open') {
       console.log(`\n[ONLINE] ${BOT_NAME} berhasil terhubung.`);
